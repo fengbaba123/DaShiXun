@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Controller.Activity.HomeActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+    <TextView
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/daxuesheng"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="中国大学生在线"
+        android:textColor="#D60000"
+        android:textSize="20dp" />
+
+    <com.example.collegemessageonline.Circleimageview.CircleImageView
+        android:layout_marginRight="10dp"
+        android:layout_gravity="right"
+        android:id="@+id/onlyone"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#D60000"></View>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!-- TabLayout  高度 20dp -->
+        <!-- ViewPager 高度 权重为1 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/frg_add"
+                android:layout_width="20dp"
+                android:layout_height="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="14dp"
+                android:gravity="center"
+                android:src="@drawable/ic_subscribe" />
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/frg_tablayout"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:focusable="false"
+                app:tabIndicatorHeight="0dp"></android.support.design.widget.TabLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_grid_title"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_toLeftOf="@id/frg_add"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="切换栏目"
+                    android:textColor="#B1B1B1"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/tv_delete_sort_bg"
+                    android:padding="3dp"
+                    android:text="排序删除"
+                    android:textColor="#24CF5F"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:background="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v4.view.ViewPager>
+        <include
+            android:visibility="gone"
+            android:id="@+id/gridlayout_ll"
+            layout="@layout/layout_gridlayout_two"
+            />
+    </FrameLayout>
+
+</LinearLayout>
